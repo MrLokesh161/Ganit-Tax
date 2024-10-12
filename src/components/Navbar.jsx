@@ -24,7 +24,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center space-x-4 mt-2 md:mt-0">
-            <h5>//</h5>
+            <h5>{'//'}</h5>
             <a href="https://facebook.com" className="text-gray-900" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
