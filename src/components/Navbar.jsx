@@ -5,11 +5,6 @@ import { faSearch, faPhoneAlt, faMapMarkerAlt } from '@fortawesome/free-solid-sv
 import { faFacebook, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("Home");
-
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
 
   return (
     <header>

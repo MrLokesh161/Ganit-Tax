@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBalanceScale, faHandshake, faChartLine, faLightbulb, faFileAlt, faUsersCog, faCalculator } from '@fortawesome/free-solid-svg-icons';
-import cardbg from '../Assets/Hero.jpg';
 import cardbg1 from '../Assets/Service Card/1.png';
 import cardbg2 from '../Assets/Service Card/2.jpg';
 import cardbg3 from '../Assets/Service Card/3.jpg';

@@ -2,18 +2,11 @@ import React, { useEffect, useState, useRef } from "react";
 import Particle from './Particle'; // Import the Particle component
 import LogoImage from '../Assets/logo-icon.jpeg'; // Your logo image
 import sShapeImage from '../Assets/vector/Vector3.png'; // Local image for S-shaped particle
-import roundvec from '../Assets/vector/Vector2.png';
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const dotSize = 4; // Size of the dotted particles
-
-  const handleScroll = () => {
-    const rect = sectionRef.current.getBoundingClientRect();
-    const isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
-    setIsVisible(isInView);
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
