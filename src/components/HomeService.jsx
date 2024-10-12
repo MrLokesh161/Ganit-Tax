@@ -148,47 +148,49 @@ const ServicesSection = () => {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4 relative z-10">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className={`relative bg-white p-6 rounded-lg shadow-lg overflow-hidden transition-opacity duration-500 ${isInView ? "opacity-100" : "opacity-0"}`} // Control opacity based on visibility
-            style={{ transitionDelay: `${index * 100}ms` }} // Adjust delay for staggered effect
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div
-              className={`absolute inset-0 transition-all duration-500 ${hoveredIndex === index ? "opacity-100" : "opacity-0"}`}
-              style={{
-                backgroundImage: `url(${service.backgroundImage})`, // Use the background image from the service
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
+  {services.map((service, index) => (
+    <div
+      key={index}
+      className={`relative bg-white p-6 rounded-lg shadow-lg overflow-hidden transition-opacity duration-500 ${isInView ? "opacity-100" : "opacity-0"}`}
+      style={{ transitionDelay: `${index * 100}ms` }} // Adjust delay for staggered effect
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
+    >
+      <div
+        className={`absolute inset-0 transition-all duration-500 ${hoveredIndex === index ? "opacity-100" : "opacity-0"}`}
+        style={{
+          backgroundImage: `url(${service.backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></div>
 
-            <div className={`absolute inset-0 bg-orange-500 transition-transform duration-500 ${hoveredIndex === index ? "transform translate-y-0 opacity-90" : "transform translate-y-full opacity-0"}`}></div>
+      <div className={`absolute inset-0 bg-orange-500 transition-transform duration-500 ${hoveredIndex === index ? "transform translate-y-0 opacity-90" : "transform translate-y-full opacity-0"}`}></div>
 
-            <div className="absolute inset-x-0 top-0 h-1 bg-red-600 z-20"></div>
+      <div className="absolute inset-x-0 top-0 h-1 bg-red-600 z-20"></div>
 
-            <div className="relative z-10">
-              <div className={`text-5xl mb-4 transition-colors duration-500 ${hoveredIndex === index ? "text-white" : "text-red-600"}`}>
-                <FontAwesomeIcon icon={service.icon} />
-              </div>
-              <h3 className={`text-xl font-semibold text-justify mb-4 transition-colors duration-500 ${hoveredIndex === index ? "text-white" : "text-gray-800"}`}>
-                {service.title}
-              </h3>
-              <p className={`mb-6 transition-colors text-justify duration-500 ${hoveredIndex === index ? "text-white" : "text-gray-600"}`}>
-                {service.description}
-              </p>
-              <a
-                href="#"
-                className={`inline-block px-6 py-2 rounded-full transition-colors duration-500 ${hoveredIndex === index ? "bg-white text-red-600 hover:bg-gray-100" : "bg-red-600 text-white hover:bg-red-700"}`}
-              >
-                Learn More
-              </a>
-            </div>
-          </div>
-        ))}
+      <div className="relative z-10">
+        <div className={`text-5xl mb-4 transition-colors duration-500 ${hoveredIndex === index ? "text-white" : "text-red-600"}`}>
+          <FontAwesomeIcon icon={service.icon} />
+        </div>
+        <h3 className={`text-xl font-semibold text-justify mb-4 transition-colors duration-500 ${hoveredIndex === index ? "text-white" : "text-gray-800"}`}>
+          {service.title}
+        </h3>
+        <p className={`mb-6 transition-colors text-justify duration-500 ${hoveredIndex === index ? "text-white" : "text-gray-600"}`}>
+          {service.description}
+        </p>
+        {/* Changed href to button */}
+        <button
+          className={`inline-block px-6 py-2 rounded-full transition-colors duration-500 ${hoveredIndex === index ? "bg-white text-red-600 hover:bg-gray-100" : "bg-red-600 text-white hover:bg-red-700"}`}
+          onClick={() => {/* handle action here */}} // Implement the desired action
+        >
+          Learn More
+        </button>
       </div>
+    </div>
+  ))}
+</div>
+
     </section>
   );
 };

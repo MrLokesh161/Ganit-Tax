@@ -1,11 +1,9 @@
-// Navbar.js
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPhoneAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Navbar = () => {
-
   return (
     <header>
       {/* Combined Top Bar and Navigation */}
@@ -33,16 +31,16 @@ const Navbar = () => {
           {/* Social Icons */}
           <div className="flex items-center space-x-4 mt-2 md:mt-0">
             <h5>//</h5>
-            <a href="#" className="text-gray-900">
+            <a href="https://facebook.com" className="text-gray-900" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="#" className="text-gray-900">
+            <a href="https://instagram.com" className="text-gray-900" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="#" className="text-gray-900">
+            <a href="https://linkedin.com" className="text-gray-900" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
-            <a href="#" className="text-gray-900">
+            <a href="https://whatsapp.com" className="text-gray-900" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faWhatsapp} />
             </a>
           </div>

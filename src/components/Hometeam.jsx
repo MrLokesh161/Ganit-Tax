@@ -70,17 +70,20 @@ const TeamSection = () => {
       },
       { threshold: 0.1 } // Trigger when 10% of the section is visible
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  
+    const currentRef = sectionRef.current; // Copy the ref value to a local variable
+  
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-
+  
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef); // Use the local variable in the cleanup
       }
     };
   }, []);
+  
 
   const handleMouseEnter = (id) => {
     setHoveredMember(id);

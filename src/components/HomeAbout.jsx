@@ -16,13 +16,15 @@ const AboutSection = () => {
       { threshold: 0.1 } // Trigger when 10% of the section is visible
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current; // Store the current value
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -44,7 +46,7 @@ const AboutSection = () => {
             />
           ))
         )).flat()} {/* Flattening the array here */}
-        
+
         {/* S-Shaped Particles */}
         <Particle
           type="sShape"
@@ -88,12 +90,13 @@ const AboutSection = () => {
           </li>
         </ul>
         <div className="mt-6">
-          <a
-            href="#"
+          {/* Changed href to button */}
+          <button
             className="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-md transition duration-300"
+            onClick={() => {/* handle action here */}} // Handle click action
           >
             Learn More About Us
-          </a>
+          </button>
         </div>
       </div>
 
