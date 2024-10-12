@@ -3,19 +3,12 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPhoneAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; // Import Hamburger Icon
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("Home");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // State for mobile menu
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
-    setMobileMenuOpen(false); // Close t  he menu when a link is clicked
-  };
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -42,11 +35,6 @@ const Navbar = () => {
             </span>
           </div>
 
-          {/* Hamburger Icon for Mobile */}
-          <div className="flex items-center md:hidden" onClick={toggleMobileMenu}>
-            <FontAwesomeIcon icon={mobileMenuOpen ? faTimes : faBars} className="text-gray-900 text-2xl" />
-          </div>
-
           {/* Social Icons */}
           <div className="flex items-center space-x-4 mt-2 md:mt-0">
             <h5>//</h5>
@@ -65,26 +53,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white p-4">
-          <ul className="flex flex-col space-y-2">
-            <li>
-              <a href="/" onClick={() => handleLinkClick("Home")}>Home</a>
-            </li>
-            <li>
-              <a href="/about" onClick={() => handleLinkClick("About Us")}>About Us</a>
-            </li>
-            <li>
-              <a href="/services" onClick={() => handleLinkClick("Services")}>Services</a>
-            </li>
-            <li>
-              <a href="/contact" onClick={() => handleLinkClick("Contact")}>Contact</a>
-            </li>
-          </ul>
-        </div>
-      )}
     </header>
   );
 };

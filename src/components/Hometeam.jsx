@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -18,9 +18,9 @@ const teamMembers = [
     image: teamMem,
   },
   {
-    name: 'John Doe',
-    position: 'CEO',
-    email: 'johndoe@example.com',
+    name: 'Jane Smith',
+    position: 'CFO',
+    email: 'janesmith@example.com',
     social: {
       facebook: 'https://facebook.com',
       twitter: 'https://twitter.com',
@@ -30,9 +30,9 @@ const teamMembers = [
     image: teamMem,
   },
   {
-    name: 'John Doe',
-    position: 'CEO',
-    email: 'johndoe@example.com',
+    name: 'Michael Johnson',
+    position: 'Tax Consultant',
+    email: 'michaeljohnson@example.com',
     social: {
       facebook: 'https://facebook.com',
       twitter: 'https://twitter.com',
@@ -41,13 +41,46 @@ const teamMembers = [
     },
     image: teamMem,
   },
-  // Add more team members here
+  {
+    name: 'Emily Davis',
+    position: 'Senior Accountant',
+    email: 'emilydavis@example.com',
+    social: {
+      facebook: 'https://facebook.com',
+      twitter: 'https://twitter.com',
+      linkedin: 'https://linkedin.com',
+      instagram: 'https://instagram.com',
+    },
+    image: teamMem,
+  },
+  // Add more team members here as needed
 ];
 
 const brandColor = '#D32F2F'; // Define your brand color
 
 const TeamSection = () => {
   const [hoveredMember, setHoveredMember] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Trigger when 10% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const handleMouseEnter = (id) => {
     setHoveredMember(id);
@@ -58,16 +91,19 @@ const TeamSection = () => {
   };
 
   return (
-    <div className="container mx-auto p-8">
+    <div
+      ref={sectionRef}
+      className={`container mx-auto my-[6%] p-8 transition-opacity duration-700 ${isVisible ? "opacity-100" : "opacity-0"}`}
+    >
       <div className="text-center mb-6 flex items-center justify-center">
-          <hr className="w-32 border-t-4 border-red-600 mx-2" />
-          <h1 className="font-extrabold text-red-600 text-xl px-2">MEET OUR TEAM</h1>
-          <hr className="w-32 border-t-4 border-red-600 mx-2" />
+        <hr className="w-32 border-t-4 border-red-600 mx-2" />
+        <h1 className="font-extrabold text-red-600 text-xl px-2">MEET OUR TEAM</h1>
+        <hr className="w-32 border-t-4 border-red-600 mx-2" />
       </div>
-      <h2 className="text-5xl font-bold text-center mb-10">
-        Experience Team Members
+      <h2 className="text-5xl font-bold text-center mb-[5%]">
+        Experienced Team Members
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
         {teamMembers.map((member, index) => (
           <div
             key={index}

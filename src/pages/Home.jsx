@@ -7,16 +7,6 @@ import HomeService from '../components/HomeService';
 import Hometeam from '../components/Hometeam';
 import Footer from '../components/Footer';
 
-// ServiceCard component for displaying individual services
-const ServiceCard = ({ title, description }) => {
-  return (
-    <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-      <h2 className="font-bold text-xl mb-4">{title}</h2>
-      <p>{description}</p>
-    </div>
-  );
-};
-
 // HomePage component containing the hero section and service cards
 const HomePage = () => {
   const [activeLink, setActiveLink] = useState("Home");
@@ -26,19 +16,22 @@ const HomePage = () => {
   };
 
   return (
-    <div className=' overflow-hidden '>
-      <div className='bg-gray-800 z-10 relative w-[90%] ml-[5%]'>
+    <div className="overflow-hidden">
+      {/* Navigation Menu */}
+      <div className="bg-gray-800 z-10 relative w-full lg:ml-[5%]  lg-w-[90%] md:ml-[0%] md:w-[90%] sm:ml-[0%] sm:w-[100%]">
         <NavMenu activeLink={activeLink} handleLinkClick={handleLinkClick} />
       </div>
 
-      <div className='mt-[-3.3%]'>
+      {/* Hero and Content */}
+      <div className="mt-[-28.3%] sm:mt-[-12] md:mt-[-9.9%] lg:mt-[-7.6%] xl:mt-[-6%] 2xl:mt-[-3.3%]">
         <Hero />
         <HeroCard />
         <AboutSection />
         <HomeService />
         <Hometeam />
         <Footer />
-      </div> 
+      </div>
+
     </div>
   );
 };

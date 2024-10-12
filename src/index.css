@@ -96,6 +96,15 @@ nav ul li {
   .slide2 {
     background-image: url('./Assets/carousel/2.jpg');
   }
+
+  .slide3 {
+    background-image: url('./Assets/carousel/3.jpg');
+  }
+  
+  .slide4 {
+    background-image: url('./Assets/carousel/4.jpg');
+  }
+
   
   /* HomeCarousel.css */
 
@@ -148,7 +157,7 @@ nav ul li {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-20px);
     }
   }
   

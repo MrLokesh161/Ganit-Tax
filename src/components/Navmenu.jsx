@@ -12,7 +12,7 @@ const NavMenu = ({ activeLink, handleLinkClick }) => {
   };
 
   return (
-    <nav className="container shadow-md bg-gray-800 w-full overflow-visible mx-auto mt-7">
+    <nav className="container shadow-md bg-gray-800 w-full overflow-visible mx-auto mt-1 sm:mt-1 md:mt-3  lg:mt-5  xl:mt-6  2xl:mt-7 ">
       <div className="flex items-center py-4 justify-between z-40 bg-gray-800">
         {/* Left side: Logo */}
         <div className="flex items-center space-x-2">
