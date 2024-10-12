@@ -64,7 +64,7 @@ const NavMenu = ({ activeLink, handleLinkClick }) => {
             onMouseLeave={() => setDropdownOpen(null)}
           >
             <a
-              href="#"
+              href="/individual-taxes"
               className={`relative transition duration-300 ${activeLink === "Individual Taxes" ? "text-white" : "text-sm sm:text-base"}`}
             >
               Individual Taxes
@@ -90,7 +90,7 @@ const NavMenu = ({ activeLink, handleLinkClick }) => {
             onMouseLeave={() => setDropdownOpen(null)}
           >
             <a
-              href="#"
+              href="/Business-Taxes"
               className={`relative transition duration-300 ${activeLink === "Business Taxes" ? "text-white" : "text-sm sm:text-base"}`}
             >
               Business Taxes
@@ -116,7 +116,7 @@ const NavMenu = ({ activeLink, handleLinkClick }) => {
             onMouseLeave={() => setDropdownOpen(null)}
           >
             <a
-              href="#"
+              href="/Other-Services"
               className={`relative transition duration-300 ${activeLink === "Other Services" ? "text-white" : "text-sm sm:text-base"}`}
             >
               Other Services

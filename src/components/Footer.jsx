@@ -7,7 +7,6 @@ import Logo from '../Assets/logo-darked.png'; // Update logo path if needed
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-gray-300 py-10">
-      {/* Wrapper div to center the content and make it 80% of the screen width */}
       <div className="w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
         {/* About Company Section */}
@@ -17,16 +16,16 @@ const Footer = () => {
             At Ganit Tax Inc, we specialize in providing tailored tax and accounting solutions to help individuals and businesses achieve their financial goals.
           </p>
           <div className="flex space-x-3">
-            <a href="#" className="text-gray-500 hover:text-red-600">
+            <a href="https://www.facebook.com" className="text-gray-500 hover:text-red-600" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-500 hover:text-red-600">
+            <a href="https://www.twitter.com" className="text-gray-500 hover:text-red-600" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faTwitter} className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-500 hover:text-red-600">
+            <a href="https://www.linkedin.com" className="text-gray-500 hover:text-red-600" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-500 hover:text-red-600">
+            <a href="https://www.instagram.com" className="text-gray-500 hover:text-red-600" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
             </a>
           </div>
@@ -37,22 +36,22 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-4 border-b-2 border-red-600 inline-block pb-1">Services</h3>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="text-gray-400 hover:text-red-600">Tax Preparation</a>
+              <a href="/tax-preparation" className="text-gray-400 hover:text-red-600">Tax Preparation</a>
             </li>
             <li>
-              <a href="#" className="text-gray-400 hover:text-red-600">Business Consulting</a>
+              <a href="/business-consulting" className="text-gray-400 hover:text-red-600">Business Consulting</a>
             </li>
             <li>
-              <a href="#" className="text-gray-400 hover:text-red-600">Payroll Services</a>
+              <a href="/payroll-services" className="text-gray-400 hover:text-red-600">Payroll Services</a>
             </li>
             <li>
-              <a href="#" className="text-gray-400 hover:text-red-600">ITIN Processing</a>
+              <a href="/itin-processing" className="text-gray-400 hover:text-red-600">ITIN Processing</a>
             </li>
             <li>
-              <a href="#" className="text-gray-400 hover:text-red-600">Financial Analysis</a>
+              <a href="/financial-analysis" className="text-gray-400 hover:text-red-600">Financial Analysis</a>
             </li>
             <li>
-              <a href="#" className="text-gray-400 hover:text-red-600">Estate Planning</a>
+              <a href="/estate-planning" className="text-gray-400 hover:text-red-600">Estate Planning</a>
             </li>
           </ul>
         </div>
